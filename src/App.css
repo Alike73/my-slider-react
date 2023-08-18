@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+.slider {
+  overflow: hidden;
+  position: relative;
+ /* DOTS */
+ /* ARROWS */
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.slider .slide-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+.slider .slide-list .slide {
+  flex: 1 0 100%;
+  position: relative;
+}
+.slider .slide-list .slide .slide-image {
+  display: flex;
+  margin: 0 auto;
+  max-height: 70vh;
+  width: 100%;
+  object-fit: contain;
+}
+.slider .slide-list .slide .slide-title {
+  text-align: center;
+  margin-top: 10px;
+}
+.slider .dots {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+.slider .dots .dot {
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  height: 10px;
+  margin: 5px;
+  width: 10px;
+}
+.slider .dots .dot:hover {
+  cursor: pointer;
+}
+.slider .dots .dot.selected {
+  background-color: green;
+}
+.slider .arrows {
   color: white;
+  display: flex;
+  font-size: 30px;
+  justify-content: space-between;
+  height: 100%;
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  z-index: 1;
+}
+.slider .arrows .arrow {
+  height: 30px;
+  width: 30px;
+}
+.slider .arrows .arrow:hover {
+  cursor: pointer;
+}
+.slider .arrows .arrow.left {
+  background-image: url(../src/assets/icons/arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 5px;
+  transform: rotate(180deg);
+}
+.slider .arrows .arrow.right {
+  background-image: url(../src/assets/icons/arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+/* --------------------------------------------- */
+.slider {
+  overflow: hidden;
+  position: relative;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.slider .slide {
+  flex: 1 0 100%;
+  position: relative;
+}
+.slider .slide .fadeInAnimation {
+  animation: fadeIn 1.5s;
+}
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+    100% {
+      opacity: 1;
   }
+}
+.slider .slide .slide-image {
+  display: flex;
+  margin: 0 auto;
+  max-height: 300px;
+  width: 100%;
+  object-fit: contain;
+}
+.slider .slide .slide-title {
+  text-align: center;
+  margin-top: 10px;
 }
